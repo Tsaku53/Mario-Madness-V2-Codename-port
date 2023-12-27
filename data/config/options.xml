@@ -1,4 +1,8 @@
 <!DOCTYPE codename-mod-options>
+<menu name="Mario Options" desc="Options for Mario's Madness">
+    <checkbox id="flashingLights" name="Flashing Lights" desc="If checked, flashing lights will occur in menus and songs. Disable if you are sensitive to this!"/>
+</menu>
+
 <menu name="Psych UI options" desc="Psych UI options real"> <!-- Options will change this is so Psych UI doesn't begin to freak out -->
     <number id="PauseMusic" name="Choose pause music" desc="Choose between breakfast [0] or tea-time! [1]" min="0" max="1" change="1"/>
     <number id="Splashes" name="Choose Splashes" desc="Choices: Vanilla [0] | diamond [1]" min="0" max="1" change="1"/>

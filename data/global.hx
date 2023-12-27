@@ -1,5 +1,11 @@
 import funkin.backend.utils.NativeAPI;
 
+function new(){
+    // settings that get set to true on first launch
+
+    if (FlxG.save.data.flashingLights == null) FlxG.save.data.flashingLights = true;
+}
+
 static var redirectStates:Map<FlxState, String> = [
     TitleState => "customStates/MarioTitleState",
 ];

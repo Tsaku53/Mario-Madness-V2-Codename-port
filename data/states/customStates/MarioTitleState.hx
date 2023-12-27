@@ -3,6 +3,11 @@ FlxG.resizeGame(640, 360);
 FlxG.scaleMode.width = 640;
 FlxG.scaleMode.height = 360;
 
+window.x = 650;
+window.y = 325;
+
+var canDoShit:Bool = true;
+
 function new() CoolUtil.playMenuSong();
 
 function create(){
@@ -12,12 +17,13 @@ function create(){
 }
 
 function update(){
-    if (controls.ACCEPT){
-        FlxG.camera.flash(FlxColor.WHITE, 1);
+    if (controls.ACCEPT && canDoShit){
+        canDoShit = false;
+        if (FlxG.save.data.flashingLights) FlxG.camera.flash(FlxColor.WHITE, 1);
 		CoolUtil.playMenuSFX(1);
         new FlxTimer().start(.75, function(tmr:FlxTimer){FlxTween.tween(FlxG.camera, {alpha: 0}, .75, {ease: FlxEase.quintInOut});});
         new FlxTimer().start(1.5, function(tmr:FlxTimer){
-            FlxTween.tween(window, {width: 1280, height: 720}, 1, {ease: FlxEase.quartOut}).onComplete = function(){
+            FlxTween.tween(window, {x: 350, y: 200, width: 1280, height: 720}, 1, {ease: FlxEase.quartOut}).onComplete = function(){
                 FlxG.resizeWindow(1280, 720);
                 FlxG.scaleMode.width = 1280;
                 FlxG.scaleMode.height = 720;
