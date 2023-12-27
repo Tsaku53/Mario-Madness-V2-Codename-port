@@ -24,10 +24,7 @@ function create(){
 }
 
 function update(){
-    new FlxTimer().start(.2, function(){
-        FlxTween.tween(warningTxt, {alpha: 1}, .75);
-        FlxTween.tween(warningTxt.scale, {x: 1, y: 1}, .75, {ease: FlxEase.quintOut});
-    });
+    new FlxTimer().start(.2, function() {FlxTween.tween(warningTxt, {alpha: 1}, .75);});
 
     new FlxTimer().start(1, function(){
         FlxTween.tween(warningTxt, {y: 100}, 1, {ease: FlxEase.sineOut});

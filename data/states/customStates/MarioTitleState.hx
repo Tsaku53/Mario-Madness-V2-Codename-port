@@ -1,11 +1,3 @@
-FlxG.resizeWindow(640, 360);
-FlxG.resizeGame(640, 360);
-FlxG.scaleMode.width = 640;
-FlxG.scaleMode.height = 360;
-
-window.x = 650;
-window.y = 325;
-
 var canDoShit:Bool = true;
 
 function new() CoolUtil.playMenuSong();

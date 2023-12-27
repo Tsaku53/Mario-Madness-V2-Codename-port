@@ -13,7 +13,7 @@ static var redirectStates:Map<FlxState, String> = [
 ];
 
 function update(elapsed) {
-    window.title = "Mario's Madness V2";
+    window.title = "Friday Night Funkin: Mario's Madness V2";
 
     if (FlxG.keys.justPressed.F6)
         NativeAPI.allocConsole();
