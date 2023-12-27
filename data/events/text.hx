@@ -1,8 +1,4 @@
-import openfl.geom.Rectangle;
 import openfl.text.TextFormat;
-import flixel.text.FlxTextBorderStyle;
-import flixel.ui.FlxBar;
-import flixel.FlxG;
 
 var firstTxt:FlxText;
 var secondTxt:FlxText;
@@ -14,21 +10,24 @@ function create() {
 	firstTxt.screenCenter();
 	firstTxt.y -= size;
 	firstTxt.scrollFactor.set();
-	add(firstTxt);
-	firstTxt.cameras = [camGame];
+	insert(members.indexOf(dad), firstTxt);
+	insert(members.indexOf(gf), firstTxt);
+	insert(members.indexOf(boyfriend), firstTxt);
 	secondTxt = new FlxText(0, 250, 2000, "", 1000);
 	secondTxt.setFormat(Paths.font("Retro Gaming.ttf"), size, FlxColor.WHITE, "center");
 	secondTxt.screenCenter();
 	secondTxt.scrollFactor.set();
-	add(secondTxt);
-	secondTxt.cameras = [camGame];
+	insert(members.indexOf(dad), secondTxt);
+	insert(members.indexOf(gf), secondTxt);
+	insert(members.indexOf(boyfriend), secondTxt);
 	thirdTxt = new FlxText(0, 250, 2000, "", 1000);
 	thirdTxt.setFormat(Paths.font("Retro Gaming.ttf"), size, FlxColor.WHITE, "center");
 	thirdTxt.screenCenter();
 	thirdTxt.scrollFactor.set();
 	thirdTxt.y += size;
-	add(thirdTxt);
-	thirdTxt.cameras = [camGame];
+	insert(members.indexOf(dad), thirdTxt);
+	insert(members.indexOf(gf), thirdTxt);
+	insert(members.indexOf(boyfriend), thirdTxt);
 }
 
 function onEvent(e) {
