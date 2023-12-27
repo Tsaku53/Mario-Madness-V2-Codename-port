@@ -1,18 +1,11 @@
-import flixel.addons.display.FlxBackdrop;
-var bg1 = FlxBackdrop;
+
 var blackBarThingie:FlxSprite;
 function create() {
-	bg1 = new FlxBackdrop(Paths.image('stages/beatus/bars')); //its a flxbackdrop because it loops!
-	bg1.moves = true;
-	bg1.setGraphicSize(Std.int(bg1.width * 3));
-	bg1.active = true;
-	bg1.visible = true;
-	bg1.antialiasing = true;
-	insert(members.indexOf(dad), bg1);
-	insert(members.indexOf(gf), bg1);
-	insert(members.indexOf(boyfriend), bg1);
-	bg1.screenCenter();
-	FlxTween.tween(bg1, {angle: 360}, 40, {ease: FlxEase.smootherStepInOut, type: FlxTween.PINGPONG});
+	bg.screenCenter();
+
+	bg.antialiasing = true;
+	add(bg);
+	FlxTween.tween(bg, {angle: 360}, 40, {ease: FlxEase.smootherStepInOut, type: FlxTween.PINGPONG});
 
     	blackBarThingie = new FlxSprite().makeSolid(FlxG.width, FlxG.height, FlxColor.BLACK);
 	blackBarThingie.setGraphicSize(Std.int(blackBarThingie.width + 100));
@@ -50,4 +43,3 @@ function postUpdate(elapsed:Float) {
             }
     }
 }
-
