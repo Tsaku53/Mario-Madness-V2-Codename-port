@@ -10,7 +10,7 @@
 	<anim x="-25" loop="false" y="-45" fps="24" anim="DOWN" name="singDOWN"/>
 	<anim x="-25" loop="false" y="10" fps="24" anim="MISSDOWN" name="singDOWNmiss"/>
 	<anim x="45" loop="false" y="10" fps="24" anim="PreJump" name="PreJump"/>
-	<anim x="230" loop="false" y="75" fps="24" anim="Spin" name="Spin"/>
+	<anim x="230" loop="true" y="75" fps="24" anim="Spin" name="Spin"/>
 	<anim x="305" loop="false" y="34" fps="24" anim="Attack" name="Attack"/>
 	<anim x="-255" loop="true" y="-145" fps="24" anim="Capejajacomoelcharter" name="Capeanim"/>
 	<anim x="-230" loop="false" y="-135" fps="24" anim="CapeFail" name="CapeanimMISS"/>
