@@ -1,5 +1,7 @@
 import funkin.backend.utils.NativeAPI;
 
+static var initialized:Bool = false;
+
 function new(){
     // settings that get set to true on first launch
 
@@ -22,7 +24,11 @@ function update(elapsed) {
 function preStateSwitch() {
     FlxG.camera.bgColor = 0xFF000000;
 
-	for (redirectState in redirectStates.keys())
-		if (FlxG.game._requestedState is redirectState)
-            FlxG.game._requestedState = new ModState(redirectStates.get(redirectState));
+	if (!initialized) {
+		initialized = true;
+		FlxG.game._requestedState = new ModState('customStates/WarningState');
+	} else
+		for (redirectState in redirectStates.keys())
+			if (FlxG.game._requestedState is redirectState)
+				FlxG.game._requestedState = new ModState(redirectStates.get(redirectState));
 }
