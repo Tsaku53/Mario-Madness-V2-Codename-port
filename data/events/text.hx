@@ -6,7 +6,7 @@ var thirdTxt:FlxText;
 var size = 175;
 function create() {
 	firstTxt = new FlxText(0, 250, 2000, "", 1000);
-	firstTxt.setFormat(Paths.font("Retro Gaming.ttf"), size, FlxColor.WHITE, "center");
+	firstTxt.setFormat(Paths.font("Retro_Gaming.ttf"), size, FlxColor.WHITE, "center");
 	firstTxt.screenCenter();
 	firstTxt.y -= size;
 	firstTxt.scrollFactor.set();

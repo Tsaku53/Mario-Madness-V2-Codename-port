@@ -1,6 +1,4 @@
 import flixel.util.FlxSpriteUtil;
-import flixel.addons.display.shapes.FlxShapeCircle;
-import funkin.backend.scripting.events.PlayAnimEvent;
 
 var camxoffset:Float = -400;
 var camyoffset:Float = 0;
@@ -35,6 +33,14 @@ function create() {
     add(bfcape);
     add(boyfriend);
     add(brimstone);
+}
+
+function onPlayerMiss() {
+    bfcape.playAnim("CapeanimMISS"); // Probably a better way to do this but this works for now
+}
+
+function beatHit(curBeat) {
+    bfcape.playAnim("Capeanim");
 }
 
 function update(elapsed:Float) {
