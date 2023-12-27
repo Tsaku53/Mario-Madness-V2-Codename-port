@@ -5,6 +5,8 @@ static var redirectStates:Map<FlxState, String> = [
 ];
 
 function update(elapsed) {
+    window.title = "Mario's Madness V2";
+
     if (FlxG.keys.justPressed.F6)
         NativeAPI.allocConsole();
     if (FlxG.keys.justPressed.F5)

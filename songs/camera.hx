@@ -1,7 +1,7 @@
 import flixel.FlxObject;
 
-public var cameraMovementStrength=20;
-public var cameraMovementEnabled=false;
+public var cameraMovementStrength = 20;
+public var cameraMovementEnabled = true;
 
 
 function postCreate() {
