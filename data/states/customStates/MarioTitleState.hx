@@ -4,9 +4,9 @@ FlxG.scaleMode.width = 640;
 FlxG.scaleMode.height = 360;
 
 function create(){
-    txtNum = new FlxText(0, 0, 0, "Press Enter to Begin", 32);
-    txtNum.screenCenter();
-    add(txtNum);
+    enterTxt = new FlxText(0, 0, 0, "Press Enter to Begin", 32);
+    enterTxt.screenCenter();
+    add(enterTxt);
 }
 
 function update(){
