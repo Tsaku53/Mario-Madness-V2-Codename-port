@@ -9,8 +9,6 @@ function update(elapsed) {
         NativeAPI.allocConsole();
     if (FlxG.keys.justPressed.F5)
         FlxG.resetState();
-    if (FlxG.keys.justPressed.F7)
-        FlxG.switchState(new MainMenuState());
 }
 
 function preStateSwitch() {
