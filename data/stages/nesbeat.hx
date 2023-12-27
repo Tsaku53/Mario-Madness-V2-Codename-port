@@ -1,7 +1,12 @@
 
 var blackBarThingie:FlxSprite;
+
+function onCountdown(event:CountdownEvent){event.cancelled=true;}
+
 function create() {
 	bg.screenCenter();
+        cameraMovementEnabled=true;
+        trace(cameraMovementEnabled);
 
 	bg.antialiasing = true;
 	add(bg);
