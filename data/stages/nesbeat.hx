@@ -4,6 +4,7 @@ var blackBarThingie:FlxSprite;
 function onCountdown(event:CountdownEvent){event.cancelled=true;}
 
 function create() {
+	dad.alpha = 0;
 	bg.screenCenter();
         cameraMovementEnabled=true;
         trace(cameraMovementEnabled);
@@ -47,4 +48,7 @@ function postUpdate(elapsed:Float) {
                         dummyvar = 1;
             }
     }
+}
+function START() {
+	dad.alpha = 1;
 }
