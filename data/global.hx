@@ -4,8 +4,17 @@ static var initialized:Bool = false;
 
 function new(){
     // settings that get set to true on first launch
-
     if (FlxG.save.data.flashingLights == null) FlxG.save.data.flashingLights = true;
+    if (FlxG.save.data.streamerMode == null) FlxG.save.data.streamerMode = false;
+    if (FlxG.save.data.transparency_value == null) FlxG.save.data.transparency_value = 0;
+
+    // Psych Options
+    if (FlxG.save.data.Splashes == null) FlxG.save.data.Splashes = 0;
+    if (FlxG.save.data.PauseMusic == null) FlxG.save.data.PauseMusic = 0;
+    if (FlxG.save.data.botplayOption == null) FlxG.save.data.botplayOption = false;
+    if (FlxG.save.data.colouredBar == null) FlxG.save.data.colouredBar = false;
+    if (FlxG.save.data.showBar == null) FlxG.save.data.showBar = false;
+    if (FlxG.save.data.showTxt == null) FlxG.save.data.showTxt = false;
 }
 
 static var redirectStates:Map<FlxState, String> = [
