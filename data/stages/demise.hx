@@ -3,6 +3,10 @@
 import flixel.addons.display.FlxBackdrop;
 import openfl.Lib;
 
+var camxoffset:Float = 0;
+var camyoffset:Float = 0;
+var dadxoffset:Float = -1000;
+var dadyoffset:Float = 0;
 var path1:String = "stages/demise/1/";
 var path2:String = "stages/demise/2/";
 var shader:CustomShader = null; //suck ass
@@ -12,11 +16,11 @@ function create() {
 
     Lib.application.window.title="Friday Night Funkin': Mario's Madness | Demise | KennyL";    
 
-    defaultCamZoom = 0.7;
+    defaultCamZoom = 0.8;
 
     dad.x = 700;
-    dad.y = -30;
-    boyfriend.y = 300;
+    dad.y = - 100;
+    boyfriend.y = 800;
     boyfriend.x = 300;
 
 
@@ -70,7 +74,7 @@ function create() {
     boyfriend.scale.set(0.65,0.65);
 
 
-    //FlxTween.tween(boyfriend, { x: 100}, 10, { type: FlxTween.PINGPONG, ease: FlxEase.sineInOut});
+    //FlxTween.tween(boyfriendGroup, { x: 100}, 2.5, { type: FlxTween.PINGPONG, ease: FlxEase.sineInOut,});
     
 
     add(bg1);
@@ -92,7 +96,7 @@ function update() {
 
 function onCameraMove(){
     if (curCameraTarget == 0)
-           defaultCamZoom = 0.45;
+           defaultCamZoom = 0.55;
     if (curCameraTarget == 1)
-           defaultCamZoom = 0.7;
+           defaultCamZoom = 0.8;
 }
