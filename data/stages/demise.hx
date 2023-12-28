@@ -9,6 +9,8 @@ var shader2:CustomShader = null; //suck ass
 
 function create() {
 
+    //Lib.application.window.title="Friday Night Funkin': Mario's Madness | Demise | KennyL";    
+
     defaultCamZoom = 0.7;
 
     dad.x = 700;
@@ -59,7 +61,7 @@ function create() {
     shader = new CustomShader("tv");
     //camGame.addShader(shader2);
 
-    FlxTween.tween(boyfriend, { x: -0.5}, 5, { type: FlxTween.PINGPONG, ease: FlxEase.sineInOut});
+    FlxTween.tween(boyfriend, { x: 100}, 10, { type: FlxTween.PINGPONG, ease: FlxEase.sineInOut});
     
 
     add(bg1);
