@@ -1,12 +1,14 @@
-
+import openfl.Lib;
 var blackBarThingie:FlxSprite;
+var vcrshader:FunkinShader;
+var time:Float=0;
 
 function onCountdown(event:CountdownEvent) event.cancelled = true;
 
 // i will reorganize this code later - apurples
 function create() {
         dad.alpha = 0;
-
+        Lib.application.window.title="Friday Night Funkin': Mario's Madness | Unbeatable | RedTV53 ft. theWAHbox, scrumbo_, FriedFrick & Ironik";
         bg.screenCenter();
 	bg.alpha = 0;
         bg.antialiasing = true;
@@ -18,8 +20,19 @@ function create() {
         blackBarThingie.scrollFactor.set(0, 0);
         blackBarThingie.screenCenter();
         add(blackBarThingie);
+
+       // vcrshader=new FunkinShader(Assets.getText(Paths.fragShader("VCR"))); <-- this is the TV shader that was used in the song, but i dunno how shader works so i'll leave it here for someone else to check : )))
+       // camGame.addShader(vcrshader);
 }
 
+function postCreate(){
+        camHUD.alpha=0;
+}
+function update(elapsed:Float){
+ // time += elapsed;
+
+     //   vcrshader.shader.time = time;
+}
 var dummyvar = 0;
 function postUpdate(elapsed:Float) {
     switch(curCameraTarget) {
@@ -52,6 +65,11 @@ function postUpdate(elapsed:Float) {
 function beatHit(curBeat)
 {
 	if (curBeat == 0) FlxTween.tween(bg, {alpha: 0.8}, 16, {ease: FlxEase.linear, type: FlxTween.ONESHOT});
+}
+function stepHit(curStep){
+        switch(curStep){
+                case 109:FlxTween.tween(camHUD,{alpha:1},2.5,{ease:FlxEase.quadIn});
+        }
 }
 
 function START() dad.alpha = 1;
