@@ -8,6 +8,7 @@ function create() {
         dad.alpha = 0;
 
         bg.screenCenter();
+	bg.alpha = 0;
         bg.antialiasing = true;
         add(bg);
         FlxTween.tween(bg, {angle: 360}, 40, {ease: FlxEase.smootherStepInOut, type: FlxTween.PINGPONG});
@@ -46,6 +47,11 @@ function postUpdate(elapsed:Float) {
                         dummyvar = 1;
                 }
     }
+}
+
+function beatHit(curBeat)
+{
+	if (curBeat == 0) FlxTween.tween(bg, {alpha: 0.8}, 16, {ease: FlxEase.linear, type: FlxTween.ONESHOT});
 }
 
 function START() dad.alpha = 1;
