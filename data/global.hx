@@ -10,6 +10,7 @@ function new(){
 
 static var redirectStates:Map<FlxState, String> = [
     TitleState => "customStates/MarioTitleState",
+    MainMenuState => "customStates/MarioMainMenuState",
 ];
 
 function update(elapsed) {
