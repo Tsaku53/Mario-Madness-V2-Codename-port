@@ -3,7 +3,7 @@ import openfl.text.TextFormat;
 var firstTxt:FlxText;
 var secondTxt:FlxText;
 var thirdTxt:FlxText;
-var size = 175;
+var size = 150;
 var timer = 50;
 function create() {
 	firstTxt = new FlxText(0, 250, 2000, "", 1000);
@@ -58,6 +58,15 @@ function update(elapsed) {
 	}
 	if (timer < 1 && timer > 0) {
 		trace("text timer is at " + timer);
+		firstTxt.text = "";
+		secondTxt.text = "";
+		thirdTxt.text = "";
+		timer = 0;
+	}
+}
+
+function beatHit(curBeat) {
+	if (curBeat % 4 == 0 && timer < 25) {
 		firstTxt.text = "";
 		secondTxt.text = "";
 		thirdTxt.text = "";
