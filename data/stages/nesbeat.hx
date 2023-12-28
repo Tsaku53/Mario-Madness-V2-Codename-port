@@ -1,6 +1,6 @@
 import openfl.Lib;
 var blackBarThingie:FlxSprite;
-var vcrshader:FunkinShader;
+var shader:CustomShader = null;
 var time:Float=0;
 
 function onCountdown(event:CountdownEvent) event.cancelled = true;
@@ -21,17 +21,18 @@ function create() {
         blackBarThingie.screenCenter();
         add(blackBarThingie);
 
-       // vcrshader=new FunkinShader(Assets.getText(Paths.fragShader("VCR"))); <-- this is the TV shader that was used in the song, but i dunno how shader works so i'll leave it here for someone else to check : )))
-       // camGame.addShader(vcrshader);
+        shader = new CustomShader("crt");
+	shader.anaglyphIntensity = 0.3;
+	shader.whiteIntensity = 0.7;
+        camGame.addShader(shader);
 }
 
 function postCreate(){
         camHUD.alpha=0;
 }
 function update(elapsed:Float){
- // time += elapsed;
-
-     //   vcrshader.shader.time = time;
+	time += 100;
+	shader.time = time;
 }
 var dummyvar = 0;
 function postUpdate(elapsed:Float) {
@@ -68,8 +69,42 @@ function beatHit(curBeat)
 }
 function stepHit(curStep){
         switch(curStep){
-                case 109:FlxTween.tween(camHUD,{alpha:1},2.5,{ease:FlxEase.quadIn});
+                case 109:FlxTween.tween(camHUD,{alpha:1},2.5,{ease:FlxEase.smootherStepInOut});
         }
 }
 
 function START() dad.alpha = 1;
+
+function fadeOpp() {
+	//face opponent notes out (for function 'mid()')
+	for (i in 0...4) {
+    		FlxTween.tween(cpuStrums.members[i], {alpha:0}, 1, {ease: FlxEase.smootherStepInOut});
+		FlxTween.tween(cpuStrums.members[i], {x:-1000}, 4, {ease: FlxEase.smootherStepIn});
+	}
+}
+
+function mid() {
+	//middlescroll
+	for (i in 0...4) {
+    		FlxTween.tween(playerStrums.members[i], {x:425 + i * 105}, 1, {ease: FlxEase.quintOut});
+	}
+}
+
+function return() {
+	//after the middlescroll sections
+	for (i in 0...4) {
+    		cpuStrums.members[i].x = 96 + i * 105;
+		cpuStrums.members[i].alpha = 1;
+    		playerStrums.members[i].x = 736 + i * 105;
+		playerStrums.members[i].alpha = 1;
+	}
+}
+
+function part1cantbeat() {
+	//shit function name, i know, but it's the one part where it speeds up and goes middlescroll
+}
+
+function part2trans() {
+	trace("part2!!! 'aim your zapper gun'!!");
+	//transition into part 2!!!
+}
