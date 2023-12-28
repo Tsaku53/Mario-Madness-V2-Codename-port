@@ -4,14 +4,21 @@ import flixel.addons.display.FlxBackdrop;
 
 var path1:String = "stages/demise/1/";
 var path2:String = "stages/demise/2/";
+<<<<<<< HEAD
 var shader:CustomShader = null; //suck ass
 var shader2:CustomShader = null; //suck ass
+=======
+>>>>>>> f65d04f (demise)
 
 function create() {
 
     //Lib.application.window.title="Friday Night Funkin': Mario's Madness | Demise | KennyL";    
 
+<<<<<<< HEAD
     defaultCamZoom = 0.7;
+=======
+    defaultCamZoom = 0.3;
+>>>>>>> f65d04f (demise)
 
     dad.x = 700;
     dad.y = -30;
@@ -55,13 +62,19 @@ function create() {
     arm.playAnim("Right Arm");
     arm.scale.set(0.8,0.8);
 
+    legs2 = new Character(boyfriend.x + 75, boyfriend.y - 625, "BFBody", true);
+    legs2.playAnim("Legs");
+    legs2.scale.set(0.8,0.8);
+
+    arm2 = new Character(boyfriend.x, boyfriend.y + 125, "BFBody", true);
+    arm2.playAnim("Right Arm");
+    arm2.scale.set(0.8,0.8);
+
     dad.scale.set(0.8,0.8);
+    boyfriend.scale.set(0.8,0.8);
 
-    shader = new CustomShader("85");
-    shader = new CustomShader("tv");
-    //camGame.addShader(shader2);
 
-    FlxTween.tween(boyfriend, { x: 100}, 10, { type: FlxTween.PINGPONG, ease: FlxEase.sineInOut});
+    //FlxTween.tween(boyfriend, { x: 100}, 10, { type: FlxTween.PINGPONG, ease: FlxEase.sineInOut});
     
 
     add(bg1);
@@ -71,12 +84,14 @@ function create() {
     add(arm);
     add(legs);
     add(dad);
+    add(arm2);
+    add(legs2);
     add(boyfriend);
 }
 
 function update() { 
-    if (dad.animation.curAnim.name != 'idle')
-        arm.visible = false;
+    arm.visible = dad.animation.curAnim.name == "idle";
+    arm2.visible = boyfriend.animation.curAnim.name == "idle";
 }
 
 function onCameraMove(){
@@ -84,8 +99,4 @@ function onCameraMove(){
            defaultCamZoom = 0.45;
     if (curCameraTarget == 1)
            defaultCamZoom = 0.7;
-}
-
-function onDadHit() {
-    arm.visible = false;
 }
