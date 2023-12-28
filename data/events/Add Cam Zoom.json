@@ -1,9 +1,0 @@
-{
-    "params": [
-        {
-            "name": "GameZooms",
-            "type": "String",
-            "defaultValue": "0.015"
-        }
-    ]
-}
