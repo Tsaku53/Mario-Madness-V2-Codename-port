@@ -28,6 +28,7 @@ FlxG.mouse.visible = true;
 
 function create() {
     CoolUtil.playMenuSong();
+    window.title = "Friday Night Funkin: Mario's Madness V2";
     bg = new FlxBackdrop(Paths.image('menus/mainmenu/bgs/bg0'));
     bg.scale.set(3.4,3.4);
     bg.velocity.set(-50, 0);

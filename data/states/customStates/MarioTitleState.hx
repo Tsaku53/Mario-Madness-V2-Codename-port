@@ -6,6 +6,11 @@ function create(){
     enterTxt = new FlxText(0, 0, 0, "Press Enter to Begin", 32);
     enterTxt.screenCenter();
     add(enterTxt);
+    
+}
+
+function postCreate() {
+    window.title = "Friday Night Funkin: Mario's Madness V2";
 }
 
 function update(){
