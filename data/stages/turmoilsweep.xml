@@ -1,0 +1,12 @@
+<!DOCTYPE codename-engine-stage>
+<stage>
+	<gf/>
+	<sprite x="-1571" updateHitbox="true" y="-672" sprite="ThirdBGTrees" name="ThirdBGTrees"/>
+	<sprite x="-1565" updateHitbox="true" y="-597" sprite="SecondBGTrees" name="SecondBGTrees"/>
+	<sprite x="-1587" updateHitbox="true" y="-688" sprite="TreeLeaves" name="TreeLeaves"/>
+	<sprite x="-1377" y="-694" sprite="MainFloorAndTrees" name="MainFloorAndTrees"/>
+	<combo x="735.5" y="505"/>
+	<bf x="790" y="249.5"/>
+	<sprite x="-1377" updateHitbox="true" y="-688" sprite="TreesForeground" name="TreesForeground"/>
+	<dad x="-120.5" y="441"/>
+</stage>

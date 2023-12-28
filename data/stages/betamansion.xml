@@ -1,0 +1,11 @@
+<!DOCTYPE codename-engine-stage>
+<stage>
+	<sprite x="-1733" y="-460" sprite="Skybox" name="Skybox"/>
+	<sprite x="-1738" y="-456" sprite="BackBG" name="BackBG"/>
+	<sprite sprite="Alone_Fire" name="Alone_Fire"/>
+	<sprite x="-1738" y="-434" sprite="FrontBG" name="FrontBG"/>
+	<gf x="558" y="555.5" />
+	<dad x="-456.5" y="1955.5"/>
+	<bf x="558" y="555.5"/>
+	<combo x="419.5" y="797"/>
+</stage>

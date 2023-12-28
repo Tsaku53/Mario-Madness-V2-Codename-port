@@ -1,0 +1,13 @@
+{
+	"params": [
+		{
+			"name": "Stage Name",
+			"type": "String",
+			"defaultValue": "stage"
+		}, {
+			"name": "Change Character Positions",
+			"type": "Bool",
+			"defaultValue": true
+		}
+	]
+}
