@@ -4,34 +4,16 @@ var canDoShit:Bool = true;
 var optionsPressed:Bool = false;
 
 function create(){
-    warningTxt = new Alphabet(450, 300, "WARNING", true);
-    warningTxt.scrollFactor.set(0.05, 0.05);
-    add(warningTxt);
-
-    warningDesc1 = new FunkinText(-550, 205, 550,
-        "In case if you never heard about Codename Engine, this is a W.I.P engine that has bugs and unfinished things. If you see any bugs found from the engine, please report them to the discord server or in the github's issues page.",
-        30);
-    add(warningDesc1);
-
-    warningDesc2 = new FunkinText(1350, 400, 550,
-        "This port has flashing lights that can affect some people. You can press ESCAPE right now to open up the options menu if you need to turn anything off.",
-        30);
-    add(warningDesc2);
-
-    enterTxt = new FunkinText(225, 725, 0, "Press ENTER to bootup the port.", 48);
-    enterTxt.alignment = 'middle';
-    add(enterTxt);
+    window.title = "Friday Night Funkin': Mario's Madness";
+    
+    warning = new FlxSprite(0, 750).loadGraphic(Paths.image('menus/warningscreen'));
+    warning.screenCenter(FlxAxes.X);
+    FlxTween.tween(warning, {y: 75}, .75, {ease: FlxEase.cubeOut}).onComplete = function() {canDoShit = true;}
+    add(warning);
 }
 
 function update(){
     new FlxTimer().start(.2, function() {FlxTween.tween(warningTxt, {alpha: 1}, .75);});
-
-    new FlxTimer().start(1, function(){
-        FlxTween.tween(warningTxt, {y: 100}, 1, {ease: FlxEase.sineOut});
-        FlxTween.tween(warningDesc1, {x: 75}, 1, {ease: FlxEase.sineOut});
-        FlxTween.tween(warningDesc2, {x: 675}, 1, {ease: FlxEase.sineOut});
-        FlxTween.tween(enterTxt, {y: 625}, 1, {ease: FlxEase.sineOut});
-    });
 
     if (FlxG.keys.justPressed.ENTER && canDoShit) pressedEnter();
     else if (FlxG.keys.justPressed.ESCAPE) pressedEscape();

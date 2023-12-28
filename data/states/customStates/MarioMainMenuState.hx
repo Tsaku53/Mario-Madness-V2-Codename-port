@@ -14,6 +14,7 @@ import flixel.addons.display.FlxBackdrop;
 import funkin.backend.utils.CoolUtil;
 import openfl.text.TextFormat;
 import flixel.text.FlxTextBorderStyle;
+import funkin.backend.system.framerate.Framerate;
 
 var optionShit:Array<String> = ["MainGame", "WarpZone", "Freeplay", "Options", "Credits"];
 var curSelected:Int = 0;
@@ -25,6 +26,12 @@ public var canAccessDebugMenus:Bool = true;
 FlxG.mouseControls = true;
 FlxG.mouse.enabled = true;
 FlxG.mouse.visible = true;
+
+Framerate.fpsCounter.visible = true;
+Framerate.memoryCounter.visible = true;
+Framerate.codenameBuildField.visible = true;
+
+window.resizable = true;
 
 function create() {
     CoolUtil.playMenuSong();

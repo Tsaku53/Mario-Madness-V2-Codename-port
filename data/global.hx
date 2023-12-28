@@ -32,10 +32,10 @@ function update(elapsed) {
 function preStateSwitch() {
     FlxG.camera.bgColor = 0xFF000000;
 
-	if (!initialized) {
+	if (!initialized){
 		initialized = true;
 		FlxG.game._requestedState = new ModState('customStates/WarningState');
-	} else
+    }else
 		for (redirectState in redirectStates.keys())
 			if (FlxG.game._requestedState is redirectState)
 				FlxG.game._requestedState = new ModState(redirectStates.get(redirectState));
