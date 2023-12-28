@@ -4,6 +4,7 @@ var firstTxt:FlxText;
 var secondTxt:FlxText;
 var thirdTxt:FlxText;
 var size = 175;
+var timer = 50;
 function create() {
 	firstTxt = new FlxText(0, 250, 2000, "", 1000);
 	firstTxt.setFormat(Paths.font("Retro_Gaming.ttf"), size, FlxColor.WHITE, "center");
@@ -32,11 +33,34 @@ function create() {
 
 function onEvent(e) {
 	if (e.event.name == 'text') {
+		timer = 50;
 		firstTxt.text = e.event.params[0];
 		secondTxt.text = e.event.params[1];
 		thirdTxt.text = e.event.params[2];
+		if (e.event.params[0] == "" && e.event.params[1] != "" && e.event.params[2] != "") {
+			secondTxt.y = 250 - size/2;
+			thirdTxt.y = 250 + size/2;
+		} else if (e.event.params[2] == "" && e.event.params[1] != "" && e.event.params[0] != "") {
+			firstTxt.y = 250 - size/2;
+			secondTxt.y = 250 + size/2;
+		} else {
+			firstTxt.y = 250 - size;
+			secondTxt.y = 250;
+			thirdTxt.y = 250 + size;
+		}
 	}
 }
 
-function update() {
+function update(elapsed) {
+	if (timer > 0) {
+		trace("text timer is at " + timer);
+		timer -= elapsed * 60;
+	}
+	if (timer < 1 && timer > 0) {
+		trace("text timer is at " + timer);
+		firstTxt.text = "";
+		secondTxt.text = "";
+		thirdTxt.text = "";
+		timer = 0;
+	}
 }
