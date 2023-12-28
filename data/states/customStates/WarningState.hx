@@ -13,7 +13,7 @@ function create(){
 }
 
 function update(){
-    new FlxTimer().start(.2, function() {FlxTween.tween(warningTxt, {alpha: 1}, .75);});
+    new FlxTimer().start(.2, function() {FlxTween.tween(warning, {alpha: 1}, .75);});
 
     if (FlxG.keys.justPressed.ENTER && canDoShit) pressedEnter();
     else if (FlxG.keys.justPressed.ESCAPE) pressedEscape();
